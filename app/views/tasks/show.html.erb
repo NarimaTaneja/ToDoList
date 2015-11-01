@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
-<p>
-	<strong>
-		<%= @task.title %>
-	</strong>
-</p>
-<p>
-	<%= @task.description %>
-</p>
+
+<h2 class="task_title"><%= @task.title %></h2>
+<p class="task_sub_title"><%= @task.description
+%> </p>
 
 <div id="task_items_wrapper">
 	<%= render @task.task_items %>
@@ -15,5 +11,8 @@
 	</div>
 </div>
 
-<%= link_to 'Edit',edit_task_path %> |
-<%= link_to 'Back',root_path %>
+<div class="links">
+	<%= link_to 'Edit',edit_task_path %> |
+		<%= link_to 'Delete',task_path(@task), method: :delete, data: {confirm: 'Are you sure?'} %> |	
+	<%= link_to 'Back',root_path %>
+</div>

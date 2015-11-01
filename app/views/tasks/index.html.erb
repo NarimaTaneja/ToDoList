@@ -1,4 +1,11 @@
-<h1><%= link_to 'New' , new_task_path %></h1>
 <% @tasks.each do |task| %>
-<%= link_to task.title, task %>
+	<div class="index_row clearfix">
+		<h2 class="task_title"><%= link_to task.title, task %></h2>
+		<p class="task_sub_title"><%= task.description %></p>
+	</div>
 <% end %>
+<div class="links">
+	<%= link_to "New Task",new_task_path %>
+</div>
+
+
